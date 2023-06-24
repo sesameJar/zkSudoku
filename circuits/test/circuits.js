@@ -65,7 +65,7 @@ describe("Sudoku circuit", function () {
     try {
       await sudokuCircuit.calculateWitness(input);
     } catch (err) {
-      // console.log(err);
+      console.log(err);
       assert(err.message.includes("Assert Failed"));
     }
   });
@@ -98,7 +98,7 @@ describe("Sudoku circuit", function () {
     try {
       await sudokuCircuit.calculateWitness(input);
     } catch (err) {
-      // console.log(err);
+      console.log(err);
       assert(err.message.includes("Assert Failed"));
     }
   });
@@ -131,7 +131,7 @@ describe("Sudoku circuit", function () {
     try {
       await sudokuCircuit.calculateWitness(input);
     } catch (err) {
-      // console.log(err);
+      console.log(err);
       assert(err.message.includes("Assert Failed"));
     }
   });
@@ -164,7 +164,7 @@ describe("Sudoku circuit", function () {
     try {
       await sudokuCircuit.calculateWitness(input);
     } catch (err) {
-      // console.log(err);
+      console.log(err);
       assert(err.message.includes("Assert Failed"));
     }
   });
@@ -197,7 +197,7 @@ describe("Sudoku circuit", function () {
     try {
       await sudokuCircuit.calculateWitness(input);
     } catch (err) {
-      // console.log(err);
+      console.log(err);
       assert(err.message.includes("Assert Failed"));
     }
   });
