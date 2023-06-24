@@ -8,6 +8,10 @@
     "circomlib": "^2.0.5"
   },
   "devDependencies": {
-    "chai": "^4.3.7"
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
   }
 }
