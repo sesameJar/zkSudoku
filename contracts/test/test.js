@@ -5,14 +5,15 @@ const { exportCallDataGroth16 } = require("./utils/utils");
 describe("Sudoku", function () {
   let SudokuVerifier, sudokuVerifier, Sudoku, sudoku;
 
-  before(async function () {
-    SudokuVerifier = await ethers.getContractFactory("SudokuVerifier");
-    sudokuVerifier = await SudokuVerifier.deploy();
-    await sudokuVerifier.deployed();
+    before(async function () {
 
-    Sudoku = await ethers.getContractFactory("Sudoku");
-    sudoku = await Sudoku.deploy(sudokuVerifier.address);
-    await sudoku.deployed();
+        sudokuVerifier = await ethers.deployContract("SudokuVerifier")
+        await sudokuVerifier.waitForDeployment();
+        let sudokuVerifierAddress = await sudokuVerifier.getAddress()
+
+        sudoku = await ethers.deployContract("Sudoku",[sudokuVerifierAddress])
+        await sudoku.waitForDeployment();
+        
   });
 
   it("Should generate a board", async function () {
@@ -63,6 +64,7 @@ describe("Sudoku", function () {
       dataResult.c,
       dataResult.Input
     );
+      console.log("RESULT", result)
     expect(result).to.equal(true);
   });
 
